@@ -1,4 +1,8 @@
-
+<style>
+        h5 {
+            color: #0074D9;
+        }
+    </style>
     <h5>Systematic Investment Plan (SIP)</h5>
 
     <h5>What is SIP?</h5>
