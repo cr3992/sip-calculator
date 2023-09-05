@@ -20,7 +20,7 @@
          }
     </style>
 </head>
-<body>
+<body onload="loadSavedItem()">
     <div class="container">
         <div class="row text-light" style="background-color:#25793b;">
             <div class="col-8">
@@ -154,6 +154,10 @@
             var expReturn = document.getElementById("expReturn");
             var timePeriod = document.getElementById("timePeriod");
 
+            localStorage.setItem("monthlyInv",monthlyInv.value);
+            localStorage.setItem("expReturn",expReturn.value);
+            localStorage.setItem("timePeriod",timePeriod.value);
+
             var p = monthlyInv.value;
             var i = (expReturn.value/12)/100;
             var n = timePeriod.value*12;
@@ -175,6 +179,15 @@
               },
               
             });
+        }
+
+        function loadSavedItem(){
+          if(localStorage.getItem("monthlyInv")!=null){
+            document.getElementById("monthlyInv").value = Number(localStorage.getItem("monthlyInv"));
+            document.getElementById("expReturn").value = Number(localStorage.getItem("expReturn"));
+            document.getElementById("timePeriod").value = Number(localStorage.getItem("timePeriod"));
+            calculate();
+          }
         }
   </script>
 </body>
